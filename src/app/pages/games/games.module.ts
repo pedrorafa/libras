@@ -1,3 +1,4 @@
+import { StaticAlphabetComponent } from './staticAlphabet/staticAlphabet.component';
 import { RouterModule } from '@angular/router';
 import { HangmanComponent } from './hangman/hangman.component';
 import { NgModule } from '@angular/core';
@@ -17,7 +18,8 @@ import { JwBootstrapSwitchNg2Module } from 'jw-bootstrap-switch-ng2';
         JwBootstrapSwitchNg2Module
     ],
     declarations: [
-        HangmanComponent
+        HangmanComponent,
+        StaticAlphabetComponent
     ]
 })
 export class GamesModule { }

@@ -8,10 +8,12 @@ import { ProfileComponent } from './examples/profile/profile.component';
 import { SignupComponent } from './examples/signup/signup.component';
 import { LandingComponent } from './examples/landing/landing.component';
 import { NucleoiconsComponent } from './components/nucleoicons/nucleoicons.component';
+
+import { StaticAlphabetComponent } from './pages/games/staticAlphabet/staticAlphabet.component';
 import { HangmanComponent } from './pages/games/hangman/hangman.component';
 
 const routes: Routes =[
-    { path: '', redirectTo: 'hangman', pathMatch: 'full' },
+    { path: '', redirectTo: 'staticAlphabet', pathMatch: 'full' },
     { path: 'home',             component: ComponentsComponent },
     { path: 'user-profile',     component: ProfileComponent },
     { path: 'signup',           component: SignupComponent },
@@ -19,7 +21,8 @@ const routes: Routes =[
     { path: 'nucleoicons',      component: NucleoiconsComponent },
 
     
-    { path: 'hangman',      component: HangmanComponent }
+    { path: 'hangman',      component: HangmanComponent },
+    { path: 'staticAlphabet',      component: StaticAlphabetComponent }
 ];
 
 @NgModule({
