@@ -6,12 +6,15 @@
 
                 </div>
                 <div class="col-md 6">
-                    
+
                 </div>
             </div>
             <div class="row">
-                <div class="col-md 6">
-
+                <div class="col-md 12 letters-list">
+                    <div class="letter" *ngFor="let item of lettersImg">
+                        <img src="{{item.src}}" (click)="selectLetter(item.value)"
+                            [ngClass]="{'letter-selected': letterWasSelected(item.value)}" />
+                    </div>
                 </div>
             </div>
         </div>
