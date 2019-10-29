@@ -11,6 +11,8 @@ import { NucleoiconsComponent } from './components/nucleoicons/nucleoicons.compo
 
 import { StaticAlphabetComponent } from './pages/games/staticAlphabet/staticAlphabet.component';
 import { HangmanComponent } from './pages/games/hangman/hangman.component';
+import { ClassViewComponent } from './pages/class/class-view/class-view.component';
+import { ClassEditorComponent } from './pages/class/class-editor/class-editor.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'staticAlphabet', pathMatch: 'full' },
@@ -20,6 +22,8 @@ const routes: Routes = [
   { path: 'landing', component: LandingComponent },
   { path: 'nucleoicons', component: NucleoiconsComponent },
 
+  { path: 'class', component: ClassViewComponent },
+  { path: 'class-editor', component: ClassEditorComponent },
 
   { path: 'hangman', component: HangmanComponent },
   { path: 'staticAlphabet', component: StaticAlphabetComponent }
