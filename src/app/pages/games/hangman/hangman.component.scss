@@ -1,6 +1,9 @@
 .row{
     padding-top: 10px
 }
+.container{
+    color: azure;
+}
 .letters-list{
     display: contents;
 }
@@ -13,5 +16,12 @@
     margin-top: 5px;
 }
 .letter-selected{
-    opacity: 0.5;
+    opacity: 0.5; 
+}
+.selected-letter{
+    min-width: 200px;
+    max-width: 220px;
+    min-height: 200px;
+    max-height: 220px;
+    margin-left: 200px;
 }
