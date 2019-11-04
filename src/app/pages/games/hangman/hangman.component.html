@@ -1,8 +1,41 @@
 <div class="wrapper">
     <div class="section" style="background-color: chocolate">
-        <div class="container">
+        <div class="container" [hidden]="data.score">
             <div class="row">
-
+                <div class="col-md 11">
+                    <div class="row">
+                        <div class="col-md 8">
+                            <h3>{{data.lifes}} vidas</h3>
+                        </div>
+                        <div class="col-md 4">
+                            <li *ngFor="let tip of data.tips">
+                                <h5>{{tip}}</h5>
+                            </li>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <h1>{{word}}</h1>
+                    </div>
+                </div>
+                <div class="col-md 1 pull-right">
+                    <img src="{{selectedLetters.length > 0 ? selectedLetters[selectedLetters.length - 1].src:''}}" class="selected-letter" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md 12 letters-list">
+                    <div class="letter" *ngFor="let item of lettersImg">
+                        <img src="{{item.src}}" (click)="selectLetter(item)"
+                            [ngClass]="{'letter-selected': letterWasSelected(item.value)}" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container" [hidden]="!data.score">
+            <div class="row">
+                <h1>{{word}}</h1>
+            </div>
+            <div class='row'>
+                <h1>{{data.score}}</h1>
             </div>
         </div>
     </div>

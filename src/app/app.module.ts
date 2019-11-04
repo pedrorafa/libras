@@ -12,6 +12,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { ComponentsModule } from './components/components.module';
 import { ExamplesModule } from './examples/examples.module';
 import { GamesModule } from './pages/games/games.module';
+import { ClassModule } from './pages/class/class.module';
 
 
 @NgModule({
@@ -27,8 +28,9 @@ import { GamesModule } from './pages/games/games.module';
     RouterModule,
     ComponentsModule,
     ExamplesModule,
-    GamesModule,
     AppRoutingModule,
+    GamesModule,
+    ClassModule
   ],
   providers: [],
   bootstrap: [AppComponent]

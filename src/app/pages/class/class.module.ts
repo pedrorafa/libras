@@ -1,6 +1,4 @@
-import { StaticAlphabetComponent } from './staticAlphabet/staticAlphabet.component';
 import { RouterModule } from '@angular/router';
-import { HangmanComponent } from './hangman/hangman.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -8,6 +6,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NouisliderModule } from 'ng2-nouislider';
 import { JwBootstrapSwitchNg2Module } from 'jw-bootstrap-switch-ng2';
 import { HttpClientModule } from '@angular/common/http';
+import { ClassViewComponent } from './class-view/class-view.component';
+import { ClassEditorComponent } from './class-editor/class-editor.component';
 
 @NgModule({
     imports: [
@@ -20,8 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
         HttpClientModule
     ],
     declarations: [
-        HangmanComponent,
-        StaticAlphabetComponent
+        ClassViewComponent,
+        ClassEditorComponent
     ]
 })
-export class GamesModule { }
+export class ClassModule { }
