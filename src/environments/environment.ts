@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  apiHost: "http://localhost:3001/api/"
+  apiHost: "https://api-libras.herokuapp.com/api/"
 };

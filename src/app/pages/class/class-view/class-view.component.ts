@@ -10,6 +10,12 @@ export class ClassViewComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.classes.push({
+      idGames:[],
+      Level: 1,
+      Duration: 10,
+      createAt: new Date()
+    })
   }
-
+  private classes = []
 }

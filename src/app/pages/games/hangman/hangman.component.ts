@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import lettersImgData from 'assets/img/libras/alphabet/list.js'
-import { element } from 'protractor';
 
 @Component({
     selector: 'app-profile',
@@ -17,15 +16,18 @@ export class HangmanComponent implements OnInit {
     canvas: ElementRef<HTMLCanvasElement>;
 
     private ctx: CanvasRenderingContext2D;
+    private apiHost = 'http://localhost:3001/api/'
 
     ngOnInit() {
         //this.ctx = this.canvas.nativeElement.getContext('2d');
         this.startGame();
     }
     startGame() {
-        // this.http.get(process.env.apiHost + 'games?Name=hangman').subscribe(res => {
-        //     console.log(res)
-        // })
+        console.log(this.apiHost + 'games?Name=hangman')
+        this.http.get(this.apiHost + 'games?Name=hangman')
+            .subscribe(res => {
+                console.log(res)
+            })
         this.data = {
             word: 'papa',
             tips: ['lider religioso'],
