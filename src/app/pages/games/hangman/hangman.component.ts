@@ -16,7 +16,7 @@ export class HangmanComponent implements OnInit {
     canvas: ElementRef<HTMLCanvasElement>;
 
     private ctx: CanvasRenderingContext2D;
-    private apiHost = 'http://localhost:3001/api/'
+    private apiHost = 'https://api-libras.herokuapp.com/api/'
 
     ngOnInit() {
         //this.ctx = this.canvas.nativeElement.getContext('2d');
