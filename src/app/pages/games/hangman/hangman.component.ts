@@ -78,10 +78,10 @@ export class HangmanComponent implements OnInit {
             Math.round(this.data.word.length / this.selectedLetters.length * 100)
     }
 
-    private lettersImg = lettersImgData
-    private selectedLetters = []
-    private word = ''
-    private data = {
+    public lettersImg = lettersImgData
+    public selectedLetters = []
+    public word = ''
+    public data = {
         word: '',
         tips: [],
         lifes: 0,
