@@ -3,10 +3,29 @@
     <div class="container">
       <div class="row class-list">
         <div *ngFor="let class of classes" class="class-box">
-          {{class.Level}}
+          <div class="card" (click)="editClass(class._id)">
+            <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+            <div class="card-body">
+              <h4 class="card-title">
+                {{class.Title}}
+              </h4>
+              <div class="card-text">
+                <div class="row" style="text-align: right;">
+                  <p> {{class.Duration}} min </p>
+                </div>
+                <div class="row">
+                  {{class.Description}}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="class-box">
-
+          <div class="card" (click)="addClass()">
+            <div href="" class="btn btn-primary" style="height: 100%;">
+              <i class="fa fa-plus fa-5x" style="margin-top: 40%; margin-right: 25px;"></i>
+            </div>
+          </div>
         </div>
       </div>
     </div>
