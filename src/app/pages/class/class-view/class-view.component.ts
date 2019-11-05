@@ -17,5 +17,5 @@ export class ClassViewComponent implements OnInit {
       createAt: new Date()
     })
   }
-  private classes = []
+  public classes = []
 }
