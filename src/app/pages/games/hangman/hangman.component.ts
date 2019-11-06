@@ -27,14 +27,9 @@ export class HangmanComponent implements OnInit {
         this.http.get(this.apiHost + 'games?Name=hangman')
             .subscribe(res => {
                 console.log(res)
+                this.data = res[0].Data
+                this.showWord();
             })
-        this.data = {
-            word: 'papa',
-            tips: ['lider religioso'],
-            lifes: 7,
-            score: undefined
-        }
-        this.showWord();
     }
 
     showWord(): void {

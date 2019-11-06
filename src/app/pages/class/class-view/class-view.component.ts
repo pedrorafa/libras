@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-class-view',
@@ -7,28 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClassViewComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.classes.push({
-      _id: "dsafsasdgaswdfgdasd",
-      idGames:[],
-      Title:"Jogo da forca",
-      Description: "Jogo da forca em libras para memorização do alfabeto e interação entre os alunos",
-      Level: 1,
-      Duration: 10,
-      createAt: new Date()
-    })
+    this.loadClasses()
   }
-  public classes = []
+
+  loadClasses() {
+    this.http.get(this.apiHost + 'class')
+      .subscribe(res => {
+        console.log(res)
+        this.classes = res
+      })
+  }
+  public classes = {}
   private apiHost = 'https://api-libras.herokuapp.com/api/'
-  
-  editClass(){
-    console.log("Editar "+this.classes[0]._id)
-    fetch(this.apiHost + 'games').then(res => console.log(res))
+
+  editClass() {
+    console.log("Editar " + this.classes[0]._id)
 
   }
-  addClass(){
+  addClass() {
     console.log("Adicionar nova classe")
   }
 }
