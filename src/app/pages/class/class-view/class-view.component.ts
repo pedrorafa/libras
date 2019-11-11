@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
@@ -8,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ClassViewComponent implements OnInit {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit() {
     this.loadClasses()
@@ -17,18 +18,18 @@ export class ClassViewComponent implements OnInit {
   loadClasses() {
     this.http.get(this.apiHost + 'class')
       .subscribe(res => {
-        console.log(res)
         this.classes = res
       })
   }
   public classes = {}
+  public showEditor = false
   private apiHost = 'https://api-libras.herokuapp.com/api/'
 
-  editClass() {
-    console.log("Editar " + this.classes[0]._id)
+  editClass(data) {
+    this.router.navigate(['/class-editor'], { state: data });
 
   }
   addClass() {
-    console.log("Adicionar nova classe")
+    this.router.navigate(['/class-editor'], { state: {} });
   }
 }

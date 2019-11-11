@@ -5,12 +5,14 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { ComponentsComponent } from './components/components.component';
 import { ProfileComponent } from './examples/profile/profile.component';
-import { SignupComponent } from './examples/signup/signup.component';
 import { LandingComponent } from './examples/landing/landing.component';
 import { NucleoiconsComponent } from './components/nucleoicons/nucleoicons.component';
 
+import { SignupComponent } from './pages/auth/signup/signup.component';
+
 import { StaticAlphabetComponent } from './pages/games/staticAlphabet/staticAlphabet.component';
 import { HangmanComponent } from './pages/games/hangman/hangman.component';
+
 import { ClassViewComponent } from './pages/class/class-view/class-view.component';
 import { ClassEditorComponent } from './pages/class/class-editor/class-editor.component';
 
