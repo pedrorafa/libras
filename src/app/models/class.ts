@@ -1,4 +1,5 @@
-export interface Class{    
+export interface Class {
+    _id: String,
     idGames: [String],
     Title: String,
     Description: String,
