@@ -21,7 +21,7 @@ export class ClassEditorComponent implements OnInit {
   loadGames() {
     this.http.get(this.apiHost + 'games').subscribe(res => {
       this.games = res
-      this.IdGame = !this.actualClass.idGames[0] ? null : this.actualClass.idGames[0]
+      this.onChange({ _id: !this.actualClass.idGames[0] ? null : this.actualClass.idGames[0] })
     })
   }
 
@@ -31,10 +31,10 @@ export class ClassEditorComponent implements OnInit {
     this.http.put(this.apiHost + 'class/' + this.actualClass._id, this.actualClass)
       .subscribe(res => {
         console.log(res)
+        alert('Aula salva!')
       })
   }
   onChange(newValue) {
-    console.log(newValue);
     this.IdGame = newValue;
 
   }

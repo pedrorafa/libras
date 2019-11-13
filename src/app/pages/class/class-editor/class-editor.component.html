@@ -40,8 +40,8 @@
                   <div class="input-group-prepend">
                     <!-- <span class="input-group-text"> <i class="nc-icon nc-email-85"></i></span> -->
                   </div>
-                  <select [ngModel]="selectedValue" (ngModelChange)="onChange($event)" name="sel2">
-                      <option [value]="game._id" *ngFor="let game of games">{{game.Name}}</option>
+                  <select class="form-control" [ngModel]="IdGame" (ngModelChange)="onChange($event)" name="sel2">
+                      <option [value]="game" *ngFor="let game of games">{{game.Name}}</option>
                   </select>
                 </div>
               </div>
