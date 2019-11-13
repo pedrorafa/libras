@@ -17,12 +17,15 @@ import { ClassViewComponent } from './pages/class/class-view/class-view.componen
 import { ClassEditorComponent } from './pages/class/class-editor/class-editor.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'staticAlphabet', pathMatch: 'full' },
+  { path: '', redirectTo: 'signup', pathMatch: 'full' },
+  
   { path: 'home', component: ComponentsComponent },
-  { path: 'user-profile', component: ProfileComponent },
-  { path: 'signup', component: SignupComponent },
   { path: 'landing', component: LandingComponent },
   { path: 'nucleoicons', component: NucleoiconsComponent },
+
+  { path: 'user-profile', component: ProfileComponent },
+  { path: 'signup', component: SignupComponent },
+  
 
   { path: 'class', component: ClassViewComponent },
   { path: 'class-editor', component: ClassEditorComponent },

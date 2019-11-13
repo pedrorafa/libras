@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
     selector: 'app-signup',
@@ -6,10 +7,25 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent implements OnInit {
-    test : Date = new Date();
+    test: Date = new Date();
     focus;
     focus1;
-    constructor() { }
 
-    ngOnInit() {}
+    private apiHost = 'https://api-libras.herokuapp.com/auth/'
+
+    public user: String
+    public pass: String
+
+    constructor(private http: HttpClient) { }
+
+    ngOnInit() { }
+
+    login() {
+        this.http.post(this.apiHost + 'login', {
+            username: this.user,
+            hash: this.pass
+        }).subscribe(res => {
+            console.log(res)
+        })
+    }
 }
