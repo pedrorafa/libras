@@ -5,5 +5,6 @@ export interface Class {
     Description: String,
     Level: Number,
     Duration: Number,
+    ClassDate: Date,
     createAt: Date
 }

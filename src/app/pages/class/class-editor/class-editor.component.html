@@ -36,21 +36,22 @@
               </div>
               <div class="col-md-3">
                 <label>Data da Aula</label>
-                <div class="input-group" [ngClass]="{'input-group-focus':focus1===true}">
-                  <div class="input-group-prepend">
-                    <!-- <span class="input-group-text"> <i class="nc-icon nc-email-85"></i></span> -->
-                  </div>
-                  <input type="date" class="form-control" [(ngModel)]="actualClass.ClassDate" name="ClassDate"
-                    placeholder="Data da Aula" (focus)="focus1=true" (blur)="focus1=false">
-                </div>
-              </div>
-              <div class="col-md-4">
-                <label>Jogo</label>
                 <div class="input-group" [ngClass]="{'input-group-focus':focus2===true}">
                   <div class="input-group-prepend">
                     <!-- <span class="input-group-text"> <i class="nc-icon nc-email-85"></i></span> -->
                   </div>
-                  <select class="form-control" [ngModel]="IdGame" (ngModelChange)="onChange($event)" name="sel2">
+                  <input type="date" class="form-control" [(ngModel)]="actualClass.ClassDate" name="ClassDate"
+                    placeholder="Data da Aula" (focus)="focus2=true" (blur)="focus2=false">
+                </div>
+              </div>
+              <div class="col-md-4">
+                <label>Jogo</label>
+                <div class="input-group" [ngClass]="{'input-group-focus':focus3===true}">
+                  <div class="input-group-prepend">
+                    <!-- <span class="input-group-text"> <i class="nc-icon nc-email-85"></i></span> -->
+                  </div>
+                  <select class="form-control" [ngModel]="IdGame" (ngModelChange)="onChange($event)" name="sel2"
+                    (focus)="focus3=true" (blur)="focus3=false">
                     <option [value]="game" *ngFor="let game of games">{{game.Name}}</option>
                   </select>
                 </div>

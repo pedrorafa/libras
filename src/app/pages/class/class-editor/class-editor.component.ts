@@ -14,7 +14,12 @@ export class ClassEditorComponent implements OnInit {
   public actualClass: Class
   public games: any
 
-  private IdGame: String
+  public IdGame: String
+
+  public focus: boolean
+  public focus1: boolean
+  public focus2: boolean
+
 
   constructor(private http: HttpClient) { }
 
