@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Class } from './../../../models/class';
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -21,7 +22,7 @@ export class ClassEditorComponent implements OnInit {
   public focus2: boolean
 
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   loadGames() {
     this.http.get(this.apiHost + 'games').subscribe(res => {
@@ -37,6 +38,7 @@ export class ClassEditorComponent implements OnInit {
       .subscribe(res => {
         console.log(res)
         alert('Aula salva!')
+        this.router.navigate(['/class'], { state: {} });
       })
   }
   onChange(newValue) {

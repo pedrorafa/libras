@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
@@ -16,7 +17,7 @@ export class SignupComponent implements OnInit {
     public user: String
     public pass: String
 
-    constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient, private router: Router) { }
 
     ngOnInit() { }
 
@@ -26,6 +27,8 @@ export class SignupComponent implements OnInit {
             hash: this.pass
         }).subscribe(res => {
             console.log(res)
+            localStorage.setItem('token', res["token"])
+            this.router.navigate(['/class'], { state: {} })
         })
     }
 }
