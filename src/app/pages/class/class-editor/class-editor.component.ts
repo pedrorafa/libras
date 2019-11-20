@@ -20,6 +20,7 @@ export class ClassEditorComponent implements OnInit {
   public focus: boolean
   public focus1: boolean
   public focus2: boolean
+  public focus3: boolean
 
 
   constructor(private http: HttpClient, private router: Router) { }
