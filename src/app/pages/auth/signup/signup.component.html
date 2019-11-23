@@ -30,8 +30,8 @@
                                         <i class="nc-icon nc-email-85"></i>
                                     </span>
                                 </div>
-                                <input type="text" class="form-control" placeholder="Email..." [(ngModel)]="user"
-                                    (focus)="focus=true" (blur)="focus=false">
+                                <input type="text" class="form-control" placeholder="Email..." name="user"
+                                    [(ngModel)]="user" (focus)="focus=true" (blur)="focus=false">
                             </div>
 
                             <label>Senha</label>
@@ -42,14 +42,14 @@
                                         <i class="nc-icon nc-key-25"></i>
                                     </span>
                                 </div>
-                                <input type="password" class="form-control" placeholder="Senha..." [(ngModel)]="pass"
-                                    (focus)="focus1=true" (blur)="focus1=false">
+                                <input type="password" class="form-control" placeholder="Senha..." name="pass"
+                                    [(ngModel)]="pass" (focus)="focus1=true" (blur)="focus1=false">
                             </div>
                             <button class="btn btn-danger btn-block btn-round" (click)="login()">Login</button>
                         </form>
                         <div class="forgot">
-                            <a href="#" class="btn btn-link btn-danger">Esqueceu a senha?</a>
-                            <a href="#" class="btn btn-link btn-info">Se cadastre aqui!</a>
+                            <!-- <a href="#" class="btn btn-link btn-danger">Esqueceu a senha?</a> -->
+                            <!-- <a href="#" class="btn btn-link btn-info">Se cadastre aqui!</a> -->
                         </div>
                     </div>
                 </div>

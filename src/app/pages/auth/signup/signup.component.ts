@@ -8,11 +8,11 @@ import { HttpClient } from '@angular/common/http';
     styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent implements OnInit {
-    test: Date = new Date();
-    focus;
-    focus1;
+    public focus;
+    public focus1;
 
     private apiHost = 'https://api-libras.herokuapp.com/auth/'
+    // private apiHost = 'http://localhost:3001/auth/'
 
     public user: String
     public pass: String
@@ -27,8 +27,10 @@ export class SignupComponent implements OnInit {
             hash: this.pass
         }).subscribe(res => {
             console.log(res)
-            localStorage.setItem('token', res["token"])
-            this.router.navigate(['/class'], { state: {} })
+            if (res['auth']) {
+                localStorage.setItem('token', res["token"])
+                this.router.navigate(['/class'], { state: {} })
+            }
         })
     }
 }
