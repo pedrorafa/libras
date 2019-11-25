@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import lettersImgData from 'assets/img/libras/alphabet/list.js'
@@ -10,7 +11,7 @@ import lettersImgData from 'assets/img/libras/alphabet/list.js'
 
 export class HangmanComponent implements OnInit {
 
-    constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient, private router: Router) { }
 
     @ViewChild('canvas')
     canvas: ElementRef<HTMLCanvasElement>;
@@ -30,6 +31,10 @@ export class HangmanComponent implements OnInit {
                 console.log(res)
                 this.data = res[0].Data
                 this.showWord();
+            }, error => {
+                alert('Sua sessão está indisponível, entre no sistema novamente por favor...')
+                localStorage.clear()
+                this.router.navigate(['/'])
             })
     }
 

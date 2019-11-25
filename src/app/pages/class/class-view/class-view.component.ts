@@ -21,6 +21,10 @@ export class ClassViewComponent implements OnInit {
     this.http.get(this.apiHost + 'class', { params })
       .subscribe(res => {
         this.classes = res
+      }, error => {
+        alert('Sua sessão está indisponível, entre no sistema novamente por favor...')
+        localStorage.clear()
+        this.router.navigate(['/'])
       })
   }
   public classes = {}

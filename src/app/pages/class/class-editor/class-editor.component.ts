@@ -36,6 +36,10 @@ export class ClassEditorComponent implements OnInit {
     this.http.get(this.apiHost + 'games', { params }).subscribe(res => {
       this.games = res
       this.onChange(!this.actualClass.idGames[0] ? null : this.actualClass.idGames[0])
+    }, error => {
+      alert('Sua sessão está indisponível, entre no sistema novamente por favor...')
+      localStorage.clear()
+      this.router.navigate(['/'])
     })
   }
 
@@ -50,6 +54,10 @@ export class ClassEditorComponent implements OnInit {
         console.log(res)
         alert('Aula salva!')
         this.router.navigate(['/class'], { state: {} });
+      }, error => {
+        alert('Sua sessão está indisponível, entre no sistema novamente por favor...')
+        localStorage.clear()
+        this.router.navigate(['/'])
       })
   }
   onChange(newValue) {
