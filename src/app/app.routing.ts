@@ -1,3 +1,4 @@
+import { CalendarComponent } from './pages/class/calendar/calendar.component';
 import { NgModule } from '@angular/core';
 import { CommonModule, } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
@@ -19,14 +20,14 @@ import { ClassEditorComponent } from './pages/class/class-editor/class-editor.co
 const routes: Routes = [
   { path: '', redirectTo: 'signup', pathMatch: 'full' },
   
-  { path: 'home', component: ComponentsComponent },
-  { path: 'landing', component: LandingComponent },
-  { path: 'nucleoicons', component: NucleoiconsComponent },
+  // { path: 'home', component: ComponentsComponent },
+  // { path: 'landing', component: LandingComponent },
+  // { path: 'nucleoicons', component: NucleoiconsComponent },
 
   { path: 'user-profile', component: ProfileComponent },
   { path: 'signup', component: SignupComponent },
-  
 
+  { path: 'calendar', component: CalendarComponent },
   { path: 'class', component: ClassViewComponent },
   { path: 'class-editor', component: ClassEditorComponent },
 

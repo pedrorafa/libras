@@ -40,7 +40,8 @@
                   <div class="input-group-prepend">
                     <!-- <span class="input-group-text"> <i class="nc-icon nc-email-85"></i></span> -->
                   </div>
-                  <input type="date" class="form-control" [(ngModel)]="actualClass.ClassDate" name="ClassDate"
+                  <input type="date" class="form-control" 
+                  [(ngModel)]="actualClass.ClassDate | date:'dd/MM/yyyy'" name="ClassDate"
                     placeholder="Data da Aula" (focus)="focus2=true" (blur)="focus2=false">
                 </div>
               </div>

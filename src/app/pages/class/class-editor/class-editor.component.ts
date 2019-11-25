@@ -15,7 +15,7 @@ export class ClassEditorComponent implements OnInit {
   public actualClass: Class
   public games: any
 
-  public IdGame: String
+  public IdGame: any
 
   public focus: boolean
   public focus1: boolean
@@ -35,12 +35,12 @@ export class ClassEditorComponent implements OnInit {
 
     this.http.get(this.apiHost + 'games', { params }).subscribe(res => {
       this.games = res
-      this.onChange({ _id: !this.actualClass.idGames[0] ? null : this.actualClass.idGames[0] })
+      this.onChange(!this.actualClass.idGames[0] ? null : this.actualClass.idGames[0])
     })
   }
 
   save() {
-    this.actualClass.idGames = [this.IdGame];
+    this.actualClass.idGames = [this.IdGame.Link];
 
     let params = new HttpParams()
       .set('x-access-token', localStorage.getItem('token'))
@@ -54,7 +54,5 @@ export class ClassEditorComponent implements OnInit {
   }
   onChange(newValue) {
     this.IdGame = newValue;
-
   }
-}
 }

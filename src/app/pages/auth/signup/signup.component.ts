@@ -29,7 +29,7 @@ export class SignupComponent implements OnInit {
             if (res['auth']) {
                 localStorage.setItem('token', res["token"])
                 console.log(localStorage.getItem('token'))
-                this.router.navigate(['/class'], { state: {} })
+                this.router.navigate(['/calendar'], { state: {} })
             } 
             else
                 alert("Login errado, tente novamente!")
