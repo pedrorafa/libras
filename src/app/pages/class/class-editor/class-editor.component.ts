@@ -1,7 +1,7 @@
 import { Router } from '@angular/router';
 import { Class } from './../../../models/class';
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 
 @Component({
   selector: 'app-class-editor',
@@ -22,11 +22,18 @@ export class ClassEditorComponent implements OnInit {
   public focus2: boolean
   public focus3: boolean
 
-
   constructor(private http: HttpClient, private router: Router) { }
 
+  ngOnInit() {
+    this.loadGames()
+    this.actualClass = history.state
+  }
+
   loadGames() {
-    this.http.get(this.apiHost + 'games').subscribe(res => {
+    let params = new HttpParams()
+      .set('x-access-token', localStorage.getItem('token'))
+
+    this.http.get(this.apiHost + 'games', { params }).subscribe(res => {
       this.games = res
       this.onChange({ _id: !this.actualClass.idGames[0] ? null : this.actualClass.idGames[0] })
     })
@@ -35,7 +42,10 @@ export class ClassEditorComponent implements OnInit {
   save() {
     this.actualClass.idGames = [this.IdGame];
 
-    this.http.put(this.apiHost + 'class/' + this.actualClass._id, this.actualClass)
+    let params = new HttpParams()
+      .set('x-access-token', localStorage.getItem('token'))
+
+    this.http.put(this.apiHost + 'class/' + this.actualClass._id, this.actualClass, { params })
       .subscribe(res => {
         console.log(res)
         alert('Aula salva!')
@@ -46,11 +56,5 @@ export class ClassEditorComponent implements OnInit {
     this.IdGame = newValue;
 
   }
-
-  ngOnInit() {
-    this.loadGames()
-    this.actualClass = history.state
-
-    console.log(this.actualClass)
-  }
+}
 }

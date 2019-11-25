@@ -12,7 +12,6 @@ export class SignupComponent implements OnInit {
     public focus1;
 
     private apiHost = 'https://api-libras.herokuapp.com/auth/'
-    // private apiHost = 'http://localhost:3001/auth/'
 
     public user: String
     public pass: String
@@ -29,8 +28,13 @@ export class SignupComponent implements OnInit {
             console.log(res)
             if (res['auth']) {
                 localStorage.setItem('token', res["token"])
+                console.log(localStorage.getItem('token'))
                 this.router.navigate(['/class'], { state: {} })
-            }
+            } 
+            else
+                alert("Login errado, tente novamente!")
+        }, error => {
+            alert("Login inválido!")
         })
     }
 }

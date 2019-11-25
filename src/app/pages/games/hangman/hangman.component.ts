@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import lettersImgData from 'assets/img/libras/alphabet/list.js'
 
 @Component({
@@ -19,12 +19,13 @@ export class HangmanComponent implements OnInit {
     private apiHost = 'https://api-libras.herokuapp.com/api/'
 
     ngOnInit() {
-        //this.ctx = this.canvas.nativeElement.getContext('2d');
         this.startGame();
     }
     startGame() {
-        console.log(this.apiHost + 'games?Name=hangman')
-        this.http.get(this.apiHost + 'games?Name=hangman')
+        let params = new HttpParams()
+            .set('x-access-token', localStorage.getItem('token'))
+
+        this.http.get(this.apiHost + 'games?Name=hangman', { params })
             .subscribe(res => {
                 console.log(res)
                 this.data = res[0].Data
@@ -71,6 +72,11 @@ export class HangmanComponent implements OnInit {
 
         this.data.score = 'Sua pontuação: ' +
             Math.round(this.data.word.length / this.selectedLetters.length * 100)
+
+        let params = new HttpParams()
+            .set('x-access-token', localStorage.getItem('token'))
+
+        // this.http.post('users',{})
     }
 
     public lettersImg = lettersImgData

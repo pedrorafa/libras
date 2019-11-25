@@ -1,6 +1,6 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 @Component({
   selector: 'app-class-view',
@@ -16,7 +16,9 @@ export class ClassViewComponent implements OnInit {
   }
 
   loadClasses() {
-    this.http.get(this.apiHost + 'class')
+    let params = new HttpParams()
+      .set('x-access-token', localStorage.getItem('token'))
+    this.http.get(this.apiHost + 'class', { params })
       .subscribe(res => {
         this.classes = res
       })

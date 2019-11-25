@@ -1,4 +1,3 @@
-import { AddHttpHeaderInterceptor } from './pages/auth/httpClientInterceptors';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -15,7 +14,6 @@ import { ExamplesModule } from './examples/examples.module';
 import { GamesModule } from './pages/games/games.module';
 import { ClassModule } from './pages/class/class.module';
 import { AuthModule } from './pages/auth/auth.module';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 
 @NgModule({
@@ -36,11 +34,6 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     ClassModule,
     AuthModule
   ],
-  providers: [{
-    provide: HTTP_INTERCEPTORS,
-    useClass: AddHttpHeaderInterceptor,
-    multi: true,
-  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
