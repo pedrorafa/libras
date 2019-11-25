@@ -1,9 +1,9 @@
 <nav class="navbar navbar-expand-lg navbar-default fixed-on-top">
     <div class="container">
-        <div class="navbar-translate">
+        <div class="navbar-translate" *ngIf="isMenuAble()"> 
             <a class="navbar-brand" href="#">LIBRAS</a>
-            <a class="navbar-brand" href="#/calendar">Sala de aula</a>
-            <a class="navbar-brand" href="#/class">Editor de Aulas</a>
+            <a class="navbar-brand" href="#/calendar" *ngIf="!isTeacher()">Sala de aula</a>
+            <a class="navbar-brand" href="#/class" *ngIf="isTeacher()">Editor de Aulas</a>
             <button class="navbar-toggler navbar-burger" type="button" data-toggle="collapse"
                 data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false"
                 aria-label="Toggle navigation" (click)="sidebarToggle()">

@@ -44,8 +44,13 @@ export class ClassEditorComponent implements OnInit {
   }
 
   save() {
-    this.actualClass.idGames = [this.IdGame.Link];
-
+    this.actualClass.idGames = [this.IdGame];
+    let strDate = '' + this.actualClass.ClassDate
+    this.actualClass.ClassDate = new Date(
+      Number(strDate.substr(0, 4)),
+      Number(strDate.substr(5, 2)) -1,
+      Number(strDate.substr(8, 2)),
+      0, 0, 0, 0)
     let params = new HttpParams()
       .set('x-access-token', localStorage.getItem('token'))
 

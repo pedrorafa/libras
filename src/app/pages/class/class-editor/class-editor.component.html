@@ -41,7 +41,7 @@
                     <!-- <span class="input-group-text"> <i class="nc-icon nc-email-85"></i></span> -->
                   </div>
                   <input type="date" class="form-control" 
-                  [(ngModel)]="actualClass.ClassDate | date:'dd/MM/yyyy'" name="ClassDate"
+                  [(ngModel)]="actualClass.ClassDate" name="ClassDate"
                     placeholder="Data da Aula" (focus)="focus2=true" (blur)="focus2=false">
                 </div>
               </div>
@@ -53,7 +53,7 @@
                   </div>
                   <select class="form-control" [ngModel]="IdGame" (ngModelChange)="onChange($event)" name="sel2"
                     (focus)="focus3=true" (blur)="focus3=false">
-                    <option [value]="game" *ngFor="let game of games">{{game.Name}}</option>
+                    <option [value]="game.Link" *ngFor="let game of games">{{game.Name}}</option>
                   </select>
                 </div>
               </div>

@@ -49,9 +49,11 @@ export class NavbarComponent implements OnInit {
     };
 
     isMenuAble(){
-        return !localStorage.getItem('token')
+        return !(!localStorage.getItem('token'))
     }
-
+    isTeacher(){
+        return !(!localStorage.getItem('permission'))
+    }
     isHome() {
       var titlee = this.location.prepareExternalUrl(this.location.path());
       if(titlee.charAt(0) === '#'){

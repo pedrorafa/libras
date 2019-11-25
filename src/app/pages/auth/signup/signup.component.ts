@@ -18,7 +18,9 @@ export class SignupComponent implements OnInit {
 
     constructor(private http: HttpClient, private router: Router) { }
 
-    ngOnInit() { }
+    ngOnInit() { 
+        localStorage.clear()
+    }
 
     login() {
         this.http.post(this.apiHost + 'login', {
@@ -28,6 +30,7 @@ export class SignupComponent implements OnInit {
             console.log(res)
             if (res['auth']) {
                 localStorage.setItem('token', res["token"])
+                localStorage.setItem('permission', res["isTeacher"])
                 console.log(localStorage.getItem('token'))
                 this.router.navigate(['/calendar'], { state: {} })
             } 
