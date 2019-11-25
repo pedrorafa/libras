@@ -1,10 +1,9 @@
 <nav class="navbar navbar-expand-lg navbar-default fixed-on-top">
     <div class="container">
-        <div class="navbar-translate">
+        <div class="navbar-translate" *ngIf="isMenuAble()"> 
             <a class="navbar-brand" href="#">LIBRAS</a>
-            <a class="navbar-brand" href="#/hangman">Jogo da Forca</a>
-            <a class="navbar-brand" href="#/class">Aulas</a>
-            <a class="navbar-brand" href="#/class-editor">Editor de Aulas</a>
+            <a class="navbar-brand" href="#/calendar">Sala de aula</a>
+            <a class="navbar-brand" href="#/class" [hidden]="!isTeacher()">Editor de Aulas</a>
             <button class="navbar-toggler navbar-burger" type="button" data-toggle="collapse"
                 data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false"
                 aria-label="Toggle navigation" (click)="sidebarToggle()">
@@ -14,7 +13,7 @@
             </button>
         </div>
         <div class="navbar-collapse" id="navbarToggler">
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav ml-auto" *ngIf="isMenuAble()">
                 <!-- <li class="nav-item" *ngIf="!isDocumentation()">
                     <a class="nav-link" rel="tooltip" title="Follow us on Twitter" data-placement="bottom" href="https://twitter.com/CreativeTim" target="_blank">
                         <i class="fa fa-twitter"></i>
@@ -33,7 +32,7 @@
                         <p class="d-lg-none">Instagram</p>
                     </a>
                 </li> -->
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link" rel="tooltip" title="Star on GitHub" data-placement="bottom" href="#"
                         target="_blank">
                         <i class="fa fa-github"></i>
@@ -41,19 +40,19 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" rel="tooltip" title="Star on GitHub" data-placement="bottom" href="#/hangman"
+                    <a class="nav-link" rel="tooltip" title="Star on GitHub" data-placement="bottom" href="#/calendar"
                         target="_blank">
                         <i class="fa fa-github"></i>
-                        <p class="d-lg-none">Jogo da Forca</p>
+                        <p class="d-lg-none">Aulas</p>
                     </a>
-                </li>
-                <li class="nav-item">
+                </li> -->
+                <!-- <li class="nav-item">
                     <a class="nav-link" rel="tooltip" title="Star on GitHub" data-placement="bottom"
                         href="https://www.github.com/pedrorafa/libras" target="_blank">
                         <i class="fa fa-github"></i>
                         <p class="d-lg-none">GitHub</p>
                     </a>
-                </li>
+                </li> -->
             </ul>
         </div>
     </div>

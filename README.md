@@ -1,1 +1,1 @@
-Libras é uma web-app para incentivar o aprendizado colaborativo da linguagem de sinais e promover inclusão social!
+Libras é uma aplicação voltada ao aprendizado colaborativo da linguagem de sinais e promoção da inclusão social!

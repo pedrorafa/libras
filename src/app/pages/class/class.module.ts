@@ -1,3 +1,4 @@
+import { CalendarComponent } from './calendar/calendar.component';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -21,7 +22,8 @@ import { ClassEditorComponent } from './class-editor/class-editor.component';
     ],
     declarations: [
         ClassViewComponent,
-        ClassEditorComponent
+        ClassEditorComponent,
+        CalendarComponent
     ]
 })
 export class ClassModule { }

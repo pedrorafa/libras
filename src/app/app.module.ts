@@ -13,6 +13,7 @@ import { ComponentsModule } from './components/components.module';
 import { ExamplesModule } from './examples/examples.module';
 import { GamesModule } from './pages/games/games.module';
 import { ClassModule } from './pages/class/class.module';
+import { AuthModule } from './pages/auth/auth.module';
 
 
 @NgModule({
@@ -30,9 +31,9 @@ import { ClassModule } from './pages/class/class.module';
     ExamplesModule,
     AppRoutingModule,
     GamesModule,
-    ClassModule
+    ClassModule,
+    AuthModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

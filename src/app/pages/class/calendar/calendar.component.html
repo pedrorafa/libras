@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row class-list">
         <div *ngFor="let class of classes" class="class-box">
-          <div class="card" (click)="editClass(class)">
+          <div class="card" (click)="play(class)">
             <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
             <div class="card-body">
               <h4 class="card-title">
@@ -17,13 +17,6 @@
                   {{class.Description}}
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-        <div class="class-box">
-          <div class="card" (click)="addClass()">
-            <div href="" class="btn btn-primary" style="height: 100%;">
-              <i class="fa fa-plus fa-5x" style="margin-top: 40%; margin-right: 25px;"></i>
             </div>
           </div>
         </div>

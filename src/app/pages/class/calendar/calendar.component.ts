@@ -4,10 +4,10 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 @Component({
   selector: 'app-class-view',
-  templateUrl: './class-view.component.html',
-  styleUrls: ['./class-view.component.scss']
+  templateUrl: './calendar.component.html',
+  styleUrls: ['./calendar.component.scss']
 })
-export class ClassViewComponent implements OnInit {
+export class CalendarComponent implements OnInit {
 
   constructor(private http: HttpClient, private router: Router) { }
 
@@ -31,11 +31,7 @@ export class ClassViewComponent implements OnInit {
   public showEditor = false
   private apiHost = 'https://api-libras.herokuapp.com/api/'
 
-  editClass(data) {
-    this.router.navigate(['/class-editor'], { state: data });
-
-  }
-  addClass() {
-    this.router.navigate(['/class-editor'], { state: {} });
+  play(data) {
+    this.router.navigate(['/' + data.idGames[0]]);
   }
 }
