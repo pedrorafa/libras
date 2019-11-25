@@ -23,6 +23,7 @@ export class SignupComponent implements OnInit {
     }
 
     login() {
+        localStorage.clear()
         this.http.post(this.apiHost + 'login', {
             username: this.user,
             hash: this.pass
